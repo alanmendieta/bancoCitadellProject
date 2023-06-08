@@ -19,7 +19,7 @@
         <div class="nav-top">
             <nav>
                 <div class="nav-logo">
-                    <a>
+                    <a href="#">
                         <figure>
                             <img src="./img/a-logo-banco-citadell.png" alt="logoBancoCitadell">
                         </figure>
@@ -43,7 +43,7 @@
         <!-- LOAN -->
         <div class="loan-section">
             <section>
-                <div class="loanTitle">
+                <div class="loan-title">
                     <h2>Prestamos Citadell | ¡Consulta el tuyo!</h2>
                 </div>
                 <div class="loan-table">
@@ -51,19 +51,19 @@
                         <div class="loan-table-up">
                             <div class="loan-table-form">
                                 <div class="loan-table-input">
-                                    <input type="text" class="form-control" id="loan-name" placeholder="Ingrese su nombre.">
+                                    <input type="text" class="loan-form-control" id="loan-name" placeholder="Ingrese su nombre.">
                                 </div>
                             </div>
     
                             <div class="loan-table-form">
                                 <div class="loan-table-input">
-                                    <input type="text" class="form-control" id="loan-surname" placeholder="Ingrese su apellido.">
+                                    <input type="text" class="loan-form-control" id="loan-surname" placeholder="Ingrese su apellido.">
                                 </div>
                             </div>
     
                             <div class="loan-table-form">
                                 <div class="loan-table-input">
-                                    <input type="email" class="form-control" id="loan-email" placeholder="Ingrese su Gmail.">
+                                    <input type="email" class="loan-form-control" id="loan-email" placeholder="Ingrese su Gmail.">
                                 </div>
                             </div>
                         </div>
@@ -74,13 +74,13 @@
                         <div class="loan-table-mid">
                             <div class="loan-table-form">
                                 <div class="loan-table-input">
-                                    <input type="text" class="form-control" id="loan-province" placeholder="Por favor, ingrese la provincia donde recide.">
+                                    <input type="text" class="loan-form-control" id="loan-province" placeholder="Por favor, ingrese la provincia donde recide.">
                                 </div>
                             </div>
     
                             <div class="loanTableLoansForm">
                                 <div class="loan-table-input">
-                                    <input type="text" class="form-control" id="loan-city" placeholder="Por favor, ingrese la localidad donde recide.">
+                                    <input type="text" class="loan-form-control" id="loan-city" placeholder="Por favor, ingrese la localidad donde recide.">
                                 </div>
                             </div>
                         </div>
@@ -94,7 +94,7 @@
                                     <div class="loan-table-sign">
                                         <span class="loan-table-sign-dolar">$</span>
                                     </div>
-                                    <input type="number" class="form-control" id="loan-amount" placeholder="Ingrese el monto de su prestamo">
+                                    <input type="number" class="loan-form-control" id="loan-amount" placeholder="Ingrese el monto de su prestamo">
 
                                     <div class="loan-selector-term">
                                         <label class="active">Plazo | Tiempo</label>
@@ -131,6 +131,47 @@
             </section>
         </div>
         <!-- END LOAN -->
+
+        <!-- INVESTMENTS -->
+        <div class="investments-section">
+            <section>
+                <div class="investments-title">
+                    <h2>Inversiones Citadell | Generando desde su casa</h2>
+                </div>
+                <div class="investments-table">
+                    <form>
+                        <div class="investments-table-up">
+                            <div class="investments-table-form">
+                                <div class="investments-table-input">
+                                    <div class="investments-table-sign">
+                                        <span class="investments-table-sign-dolar">$</span>
+                                    </div>
+                                    <input type="number" class="investments-form-control" id="investments-amount" placeholder="Por favor, escribe el monto a invertir">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="investments-table-mid">
+                            <div class="investments-table-form">
+                                <div class="investments-table-input">
+                                    <div class="investments-table-term">
+                                        <label class="active">Plazo de inversión</label>
+                                        <select id="investments-selector-term-options" name="term" class="">
+                                            <option value="3">3 meses</option>
+                                            <option value="6">6 meses</option>
+                                            <option value="9">9 meses</option>
+                                            <option value="12">12 meses</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+        <!-- END INVESTMENTS -->
     </main>
+    <script src="./js/alert.js"></script>
 </body>
 </html>
