@@ -6,13 +6,131 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Tu banco de confianza en Argentina. Dedicados y comprometidos al crecimiento personal, la prosperidad financiera y el resguardo de tu capital.">
     <link rel="icon" href="./img/a-favicon-banco-citadell.png">
+    <link rel="stylesheet" href="./css/styles.css">
     <title>Confianza, crecimiento y prosperidad | Banco Citadell</title>
 </head>
 <body>
     
     <!-- HEADER -->
     <header>
-        <h1>Banco Citadell</h1>
+        <h1>Tu banco, tu casa, tu seguridad.</h1>
+    
+        <!-- NAVIGATION MENU -->
+        <div class="nav-top">
+            <nav>
+                <div class="nav-logo">
+                    <a>
+                        <figure>
+                            <img src="./img/a-logo-banco-citadell.png" alt="logoBancoCitadell">
+                        </figure>
+                    </a>
+                </div>
+                <div class="nav-navigation">
+                    <ul>
+                        <li class="nav-button" id="nav-button-inicio"><a href=#>Inicio</a></li>
+                        <li class="nav-button" id="nav-button-prestamos"><a href="#">Prestamos</a></li>
+                        <li class="nav-button" id="nav-button-inversiones"><a href="#">Inversiones</a></li>
+                        <li class="nav-button" id="nav-button-quienesSomos"><a href="#">Quienes somos</a></li>
+                        <li class="nav-button" id="nav-button-contacto"><a href="#">Contacto</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
     </header>
+
+    <!-- ALL INFO -->
+    <main>
+        <!-- LOAN -->
+        <div class="loan-section">
+            <section>
+                <div class="loanTitle">
+                    <h2>Prestamos Citadell | ¡Consulta el tuyo!</h2>
+                </div>
+                <div class="loan-table">
+                    <form>
+                        <div class="loan-table-up">
+                            <div class="loan-table-form">
+                                <div class="loan-table-input">
+                                    <input type="text" class="form-control" id="loan-name" placeholder="Ingrese su nombre.">
+                                </div>
+                            </div>
+    
+                            <div class="loan-table-form">
+                                <div class="loan-table-input">
+                                    <input type="text" class="form-control" id="loan-surname" placeholder="Ingrese su apellido.">
+                                </div>
+                            </div>
+    
+                            <div class="loan-table-form">
+                                <div class="loan-table-input">
+                                    <input type="email" class="form-control" id="loan-email" placeholder="Ingrese su Gmail.">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- DELETE AFTER APPLYING CSS -->
+                        <br>
+
+                        <div class="loan-table-mid">
+                            <div class="loan-table-form">
+                                <div class="loan-table-input">
+                                    <input type="text" class="form-control" id="loan-province" placeholder="Por favor, ingrese la provincia donde recide.">
+                                </div>
+                            </div>
+    
+                            <div class="loanTableLoansForm">
+                                <div class="loan-table-input">
+                                    <input type="text" class="form-control" id="loan-city" placeholder="Por favor, ingrese la localidad donde recide.">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- DELETE AFTER APPLYING CSS -->
+                        <br>
+
+                        <div class="loan-table-down">
+                            <div class="loan-table-form">
+                                <div class="loan-table-input">
+                                    <div class="loan-table-sign">
+                                        <span class="loan-table-sign-dolar">$</span>
+                                    </div>
+                                    <input type="number" class="form-control" id="loan-amount" placeholder="Ingrese el monto de su prestamo">
+
+                                    <div class="loan-selector-term">
+                                        <label class="active">Plazo | Tiempo</label>
+                                        <select id="loan-selector-term-options" name="term" class="">
+                                            <option value="6">6 meses</option>
+                                            <option value="12">12 meses</option>
+                                            <option value="18">18 meses</option>
+                                            <option value="24">24 meses</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="loan-selector-customerType">
+                                        <label class="active">Tipo de Cliente</label>
+                                        <select id="loan-selector-customerType-options" name="term" class="">
+                                            <option value="1">General</option>
+                                            <option value="2">Vip</option>
+                                            <option value="3">Exclusive</option>
+                                            <option value="4">Luxury Class</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="loan-table-form">
+                            <div class="loan-table-input">
+                                <div class="loan-table-buttom">
+                                    <button id="loan-buttom">Consultar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+        <!-- END LOAN -->
+    </main>
 </body>
 </html>
