@@ -7,21 +7,22 @@
     <meta name="description" content="Tu banco de confianza en Argentina. Dedicados y comprometidos al crecimiento personal, la prosperidad financiera y el resguardo de tu capital.">
     <link rel="icon" href="./img/a-favicon-banco-citadell.png">
     <link rel="stylesheet" href="./css/styles.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <title>Confianza, crecimiento y prosperidad | Banco Citadell</title>
 </head>
 <body>
     
     <!-- HEADER -->
-    <header>
+    <header role="banner">
         <h1>Tu banco, tu casa, tu seguridad.</h1>
     
         <!-- NAVIGATION MENU -->
         <div class="nav-top">
-            <nav>
+            <nav role="navigation" aria-label="Menú principal">
                 <div class="nav-logo">
                     <a href="#">
                         <figure>
-                            <img src="./img/a-logo-banco-citadell.png" alt="logoBancoCitadell">
+                            <img src="./img/a-logo-banco-citadell.png" alt="Logo Banco Citadell">
                         </figure>
                     </a>
                 </div>
@@ -39,16 +40,16 @@
     </header>
 
     <!-- ALL INFO -->
-    <main>
+    <main role="main">
         <!-- LOAN -->
         <div class="loan-section">
-            <section>
+            <section role="region" aria-label="Prestamos Citadell">
                 <div class="loan-title">
                     <h2>Prestamos Citadell | ¡Consulta el tuyo!</h2>
                 </div>
                 <div class="loan-table">
                     <form>
-                        <div class="loan-table-up">
+                        <div class="loan-table-top">
                             <div class="loan-table-form">
                                 <div class="loan-table-input">
                                     <input type="text" class="loan-form-control" id="loan-name" placeholder="Ingrese su nombre.">
@@ -78,7 +79,7 @@
                                 </div>
                             </div>
     
-                            <div class="loanTableLoansForm">
+                            <div class="loan-table-loan-form">
                                 <div class="loan-table-input">
                                     <input type="text" class="loan-form-control" id="loan-city" placeholder="Por favor, ingrese la localidad donde recide.">
                                 </div>
@@ -88,7 +89,7 @@
                         <!-- DELETE AFTER APPLYING CSS -->
                         <br>
 
-                        <div class="loan-table-down">
+                        <div class="loan-table-bottom">
                             <div class="loan-table-form">
                                 <div class="loan-table-input">
                                     <div class="loan-table-sign">
@@ -132,15 +133,18 @@
         </div>
         <!-- END LOAN -->
 
+        <!-- DELETE AFTER APPLYING CSS -->
+        <br>
+
         <!-- INVESTMENTS -->
         <div class="investments-section">
-            <section>
+            <section role="region" aria-label="Inversiones Citadell">
                 <div class="investments-title">
                     <h2>Inversiones Citadell | Generando desde su casa</h2>
                 </div>
                 <div class="investments-table">
                     <form>
-                        <div class="investments-table-up">
+                        <div class="investments-table-top">
                             <div class="investments-table-form">
                                 <div class="investments-table-input">
                                     <div class="investments-table-sign">
@@ -166,12 +170,77 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="investments-table-bottom">
+                            <div class="investments-table-form">
+                                <div class="investments-table-input">
+                                    <div class="investments-table-percentage">
+                                        <div class="investments-table-sign">
+                                            <span class="investments-table-sign-percentage">%</span>
+                                        </div>
+                                        <input type="text" inputmode="decimal" class="investments-form-control" id="investments-percentage" placeholder="Por favor, escriba su rendimiento anual estimado">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="investments-table-form">
+                            <div class="investments-table-input">
+                                <div class="investments-table-buttom">
+                                    <button id="investments-buttom">Consultar</button>
+                                </div>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </section>
         </div>
         <!-- END INVESTMENTS -->
     </main>
+
+    <!-- FOOTER-->
+    <footer role="contentinfo">
+        <div class="footer-contact-user-info">
+            <div class="footer-contact-networks-info">
+                <div class="footer-contact-primaryInfo">
+                    <div class="footer-contact-logo" id="logo-instagram">
+                        <a href="#">
+                            <figure>
+                                <img src="./img/c-logo-contact-instagram-banco-citadell.png" alt="Logo Contacto Instagram">
+                            </figure>
+                        </a>
+                    </div>
+
+                    <div class="footer-contact-logo" id="logo-facebook">
+                        <a href="#">
+                            <figure>
+                                <img src="./img/c-logo-contact-facebook-banco-citadell.png" alt="Logo Contacto Facebook">
+                            </figure>
+                        </a>
+                    </div>
+
+                    <div class="footer-contact-logo" id="logo-gmail">
+                        <a href="#">
+                            <figure>
+                                <img src="./img/c-logo-contact-gmail-banco-citadell.png" alt="Logo Contacto Gmail">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-contact-secondaryInfo">
+                    <div class="footer-contact-title">
+                        <span class="footer-title"><p>¡Contactanos en nuestras redes sociales!</p></span>
+                    </div>
+                    <small class="footer-contact-copyright">Copyright © 1999-2023 Banco Citadell Argentina S.A</small>
+                </div>
+            </div>
+        </div>
+    </footer>
     <script src="./js/alert.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
 </body>
 </html>
