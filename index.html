@@ -52,19 +52,22 @@
                         <div class="loan-table-top">
                             <div class="loan-table-form">
                                 <div class="loan-table-input">
-                                    <input type="text" class="loan-form-control" id="loan-name" placeholder="Ingrese su nombre." required>
+                                    <label for="loan-name"></label>
+                                    <input type="text" id="loan-name" name="loan-name" class="loan-form-control" placeholder="Ingrese su nombre." required>
                                 </div>
                             </div>
     
                             <div class="loan-table-form">
                                 <div class="loan-table-input">
-                                    <input type="text" class="loan-form-control" id="loan-surname" placeholder="Ingrese su apellido." required>
+                                    <label for="loan-surname"></label>
+                                    <input type="text" id="loan-surname" name="loan-surname" class="loan-form-control" placeholder="Ingrese su apellido." required>
                                 </div>
                             </div>
     
                             <div class="loan-table-form">
                                 <div class="loan-table-input">
-                                    <input type="email" class="loan-form-control" id="loan-email" placeholder="Ingrese su Gmail." required>
+                                    <label for="loan-email"></label>
+                                    <input type="email" id="loan-email" name="loan-email" class="loan-form-control" placeholder="Ingrese su Gmail." required>
                                 </div>
                             </div>
                         </div>
@@ -75,13 +78,15 @@
                         <div class="loan-table-mid">
                             <div class="loan-table-form">
                                 <div class="loan-table-input">
-                                    <input type="text" class="loan-form-control" id="loan-province" placeholder="Por favor, ingrese la provincia donde recide." required>
+                                    <label for="loan-province"></label>
+                                    <input type="text" id="loan-province" name="loan-province" class="loan-form-control" placeholder="Por favor, ingrese la provincia donde recide." required>
                                 </div>
                             </div>
     
                             <div class="loan-table-loan-form">
                                 <div class="loan-table-input">
-                                    <input type="text" class="loan-form-control" id="loan-city" placeholder="Por favor, ingrese la localidad donde recide." required>
+                                    <label for="loan-city"></label>
+                                    <input type="text" id="loan-city" name="loan-city" class="loan-form-control" placeholder="Por favor, ingrese la localidad donde recide." required>
                                 </div>
                             </div>
                         </div>
@@ -95,7 +100,8 @@
                                     <div class="loan-table-sign">
                                         <span class="loan-table-sign-dolar">$</span>
                                     </div>
-                                    <input type="number" class="loan-form-control" id="loan-amount" placeholder="Ingrese el monto de su prestamo" required>
+                                    <label for="loan-amount"></label>
+                                    <input type="number" id="loan-amount" name="loan-amount" class="loan-form-control" placeholder="Ingrese el monto de su prestamo" required>
 
                                     <div class="loan-selector-term">
                                         <label class="active">Plazo | Tiempo</label>
@@ -150,7 +156,8 @@
                                     <div class="investments-table-sign">
                                         <span class="investments-table-sign-dolar">$</span>
                                     </div>
-                                    <input type="number" class="investments-form-control" id="investments-amount" placeholder="Por favor, escribe el monto a invertir" required>
+                                    <label for="investments-amount"></label>
+                                    <input type="number" id="investments-amount" name="investments-amount" class="investments-form-control" placeholder="Por favor, escribe el monto a invertir" required>
                                 </div>
                             </div>
                         </div>
@@ -178,7 +185,8 @@
                                         <div class="investments-table-sign">
                                             <span class="investments-table-sign-percentage">%</span>
                                         </div>
-                                        <input type="text" inputmode="decimal" class="investments-form-control" id="investments-percentage" placeholder="Por favor, escriba su rendimiento anual estimado" required>
+                                        <label for="investments-percentage"></label>
+                                        <input type="text" id="investments-percentage" name="investments-percentage" inputmode="decimal" class="investments-form-control" placeholder="Por favor, escriba su rendimiento anual estimado" required>
                                     </div>
                                 </div>
                             </div>
@@ -286,7 +294,7 @@
 
                 <div class="footer-contact-secondaryInfo">
                     <div class="footer-contact-title">
-                        <span class="footer-title"><p>¡Contactanos en nuestras redes sociales!</p></span>
+                        <p><span>¡Contactanos en nuestras redes sociales!</span></p>
                     </div>
                     <small class="footer-contact-copyright">Copyright © 1999-2023 Banco Citadell Argentina S.A</small>
                 </div>
