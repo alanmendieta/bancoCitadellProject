@@ -41,6 +41,27 @@
 
     <!-- ALL INFO -->
     <main role="main">
+
+        <div id="verification-popup">
+            <h2>Verificación de identidad</h2>
+            <p>Este sitio web es un banco nacional, solo gente mayor de edad puede consultar este apartado.</p>
+            <form id="verification-form">
+              <label for="name-input">Nombre:</label>
+              <input type="text" id="name-input" required>
+              <br>
+              <label for="surname-input">Apellido:</label>
+              <input type="text" id="surname-input" required>
+              <br>
+              <label for="dni-input">DNI (8 dígitos):</label>
+              <input type="text" id="dni-input" required pattern="[0-9]{8}">
+              <br>
+              <label for="age-input">Edad:</label>
+              <input type="number" id="age-input" required>
+              <br>
+              <button type="submit">Verificar</button>
+            </form>
+          </div>
+
         <!-- LOAN -->
         <div class="loan-section">
             <section role="region" aria-label="Prestamos | Banco Citadell">

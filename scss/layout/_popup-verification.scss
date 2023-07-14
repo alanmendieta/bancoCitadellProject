@@ -1,0 +1,31 @@
+#verification-popup {
+    display: none; /* Ocultar el pop-up por defecto */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+  }
+  
+  #verification-popup.show {
+    display: block; /* Mostrar el pop-up cuando se agrega la clase "show" */
+  }
+  
+  #verification-popup h2 {
+    margin-top: 0;
+  }
+  
+  #verification-popup input {
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 100%;
+  }
+  
+  #verification-popup button {
+    padding: 5px 10px;
+}

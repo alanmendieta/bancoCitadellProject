@@ -1,44 +1,63 @@
-// PROMPT
- let message = "Este sitio web es un banco nacional, solo gente mayor de edad puede consultar este apartado.";
- let confirmation = confirm(message);
+document.addEventListener('DOMContentLoaded', function() {
+  let verificationPopup = document.getElementById('verification-popup');
+  let verificationForm = document.getElementById('verification-form');
+  verificationForm.addEventListener('submit', function(event) {
+    event.preventDefault();
 
- if (confirmation) {
-   let name, surname, dni, age;
-   const lettersRegex = /^[A-Za-z]+$/;
+    let name = document.getElementById('name-input').value;
+    let surname = document.getElementById('surname-input').value;
+    let dni = parseInt(document.getElementById('dni-input').value);
+    let age = parseInt(document.getElementById('age-input').value);
 
-   do {
-     name = prompt("Ingrese su nombre:");
-   } while (!name || !lettersRegex.test(name));
+    let lettersRegex = /^[A-Za-z]+$/;
 
-   do {
-     surname = prompt("Ingrese su apellido:");
-   } while (!surname || !lettersRegex.test(surname));
+    if (!name || !lettersRegex.test(name)) {
+      alert("Por favor, ingrese un nombre válido.");
+      return;
+    }
 
-   do {
-     dni = prompt("Ingrese su DNI (8 dígitos):");
-     dni = parseInt(dni);
-   } while (isNaN(dni) || dni.toString().length !== 8);
+    if (!surname || !lettersRegex.test(surname)) {
+      alert("Por favor, ingrese un apellido válido.");
+      return;
+    }
 
-   do {
-     age = prompt("Por nuestra seguridad, ingrese su edad:");
-     age = parseInt(age);
-   } while (isNaN(age));
+    if (isNaN(dni) || dni.toString().length !== 8) {
+      alert("Por favor, ingrese un número de DNI válido (8 dígitos).");
+      return;
+    }
 
-   if (age >= 18) {
-     alert("Bienvenido al sitio web oficial del Banco Citadell");
-     alert("Por favor, navegue con responsabilidad y nunca proporcione datos a ninguna persona.");
-   } else {
-     alert("Siendo menor de edad no puedes acceder a esta sección, busca permiso de tu padre/madre o tutor legal y contáctanos.");
-     window.location.href = "https://www.google.com";
-   }
- } else {
-   alert("No has confirmado el acceso. Serás redirigido a la página principal.");
-   window.location.href = "https://www.google.com";
-} 
+    if (isNaN(age)) {
+      alert("Por favor, ingrese una edad válida.");
+      return;
+    }
+
+    if (age >= 18) {
+      alert("Bienvenido al sitio web oficial del Banco Citadell");
+      alert("Por favor, navegue con responsabilidad y nunca proporcione datos a ninguna persona.");
+      verificationPopup.classList.remove('show');
+
+      localStorage.setItem('name', name);
+      localStorage.setItem('surname', surname);
+      localStorage.setItem('dni', dni.toString());
+      localStorage.setItem('age', age.toString());
+
+      // Proporcionar modificacion del DOM para mostrar estos datos almacenados
+      document.getElementById('name-output').textContent = name;
+      document.getElementById('surname-output').textContent = surname;
+      document.getElementById('dni-output').textContent = dni.toString();
+      document.getElementById('age-output').textContent = age.toString();
+    } else {
+      alert("Siendo menor de edad no puedes acceder a esta sección, busca permiso de tu padre/madre o tutor legal y contáctanos.");
+      window.location.href = "https://www.google.com";
+    }
+  });
+  verificationPopup.classList.add('show');
+});
 
 // LOAN
 let loanData = [];
 
+// Función para agregar préstamo
 function addLoan() {
   let name = document.getElementById('loan-name').value;
   let surname = document.getElementById('loan-surname').value;
@@ -85,11 +104,24 @@ function addLoan() {
   clearTextFields();
 
   document.getElementById('loan-result').textContent = '$' + totalAmount.toFixed(2);
+
+  // Almacenar datos en el Storage
+  localStorage.setItem('loanData', JSON.stringify(loanData));
 }
 
+// Recuperar datos del Storage al cargar la página
+window.addEventListener('DOMContentLoaded', function() {
+  let storedLoanData = localStorage.getItem('loanData');
+  if (storedLoanData) {
+    loanData = JSON.parse(storedLoanData);
+  }
+});
+
+// Agregar evento de click al botón de préstamo
 let loanButton = document.getElementById('loan-buttom');
 loanButton.addEventListener('click', addLoan);
 
+// Función para limpiar los campos de texto
 function clearTextFields() {
   document.getElementById('loan-name').value = '';
   document.getElementById('loan-surname').value = '';
@@ -98,18 +130,6 @@ function clearTextFields() {
   document.getElementById('loan-city').value = '';
   document.getElementById('loan-amount').value = '';
   document.getElementById('loan-result').textContent = '';
-}
-
-function searchLoansByEmail(email) {
-  return loanData.find(function(loan) {
-    return loan.email === email;
-  });
-}
-
-function filtrarPrestamosPorProvincia(province) {
-  return loanData.filter(function(loan) {
-    return loan.province === province;
-  });
 }
 
 let nameInput = document.getElementById('loan-name');
@@ -144,8 +164,67 @@ function validateEmailInput(event) {
   }
 }
 
+document.getElementById('loan-name').addEventListener('focus', function() {
+  console.log('El campo de nombre ha recibido el foco.');
+});
+
+document.getElementById('loan-email').addEventListener('blur', function() {
+  console.log('El campo de correo electrónico ha perdido el foco.');
+});
+
+document.getElementById('loan-province').addEventListener('change', function() {
+  let selectedProvince = this.value;
+  console.log('Se ha seleccionado la provincia: ' + selectedProvince);
+});
+
+document.getElementById('loan-amount').addEventListener('keypress', function(event) {
+  if (event.key === 'Enter') {
+    console.log('Se ha presionado la tecla Enter en el campo de cantidad de préstamo.');
+  }
+});
+
+document.getElementById('loan-buttom').addEventListener('mouseenter', function() {
+  console.log('El puntero del mouse ha ingresado al botón de préstamo.');
+});
+
+document.getElementById('loan-buttom').addEventListener('mouseleave', function() {
+  console.log('El puntero del mouse ha salido del botón de préstamo.');
+});
+
 // INVESTMENTS
-document.getElementById('investments-buttom').addEventListener('click', function(event) {
+
+function saveData(key, value) {
+  localStorage.setItem(key, value);
+}
+
+
+function getData(key) {
+  return localStorage.getItem(key);
+}
+
+
+window.addEventListener('load', function() {
+
+  const storedAmount = getData('investmentsAmount');
+  const storedTerm = getData('investmentsTerm');
+  const storedPercentage = getData('investmentsPercentage');
+  const storedResult = getData('investmentsResult');
+
+  if (storedAmount) {
+    document.getElementById('investments-amount').value = storedAmount;
+  }
+  if (storedTerm) {
+    document.getElementById('investments-selector-term-options').value = storedTerm;
+  }
+  if (storedPercentage) {
+    document.getElementById('investments-percentage').value = storedPercentage;
+  }
+  if (storedResult) {
+    document.getElementById('investments-result').textContent = storedResult;
+  }
+});
+
+function handleInvestments() {
   event.preventDefault();
 
   const amount = parseFloat(document.getElementById('investments-amount').value);
@@ -175,7 +254,13 @@ document.getElementById('investments-buttom').addEventListener('click', function
   const totalAmount = amount * (1 + (parseFloat(percentage.replace(',', '.')) / 100)) * (1 + (rate / 100));
 
   document.getElementById('investments-result').textContent = '$' + totalAmount.toFixed(2);
-});
+
+  saveData('investmentsAmount', amount);
+  saveData('investmentsTerm', term);
+  saveData('investmentsPercentage', percentageInput.value);
+  saveData('investmentsResult', '$' + totalAmount.toFixed(2));
+}
+document.getElementById('investments-button').addEventListener('click', handleInvestments);
 
 document.getElementById('investments-percentage').addEventListener('input', function(event) {
   let input = event.target;
