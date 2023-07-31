@@ -1,0 +1,43 @@
+.loan-section {
+    background-color: #f9f9f9;
+    padding: 23px;
+    margin-top: 50px;
+  }
+  
+  .loan-title {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .loan-table {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+  }
+  
+  .loan-table-input {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px;
+    margin: 10px;
+  }
+  
+  .loan-table-input label {
+    flex: 0 0 30px;
+    margin-right: 10px;
+}
+  
+    .loan-form-control {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 17px;
+  }
+  

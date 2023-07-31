@@ -107,14 +107,35 @@ function addLoan() {
 
   // Almacenar datos en el Storage
   localStorage.setItem('loanData', JSON.stringify(loanData));
+
+  fetch('data.json')
+    .then(response => response.json())
+    .then(data => {
+      data.loans.push(loan);
+      return fetch('data.json', {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+    })
+    .then(() => clearTextFields())
+    .catch(error => console.error('Error al guardar datos en el archivo JSON:', error));
 }
 
 // Recuperar datos del Storage al cargar la página
 window.addEventListener('DOMContentLoaded', function() {
-  let storedLoanData = localStorage.getItem('loanData');
-  if (storedLoanData) {
-    loanData = JSON.parse(storedLoanData);
-  }
+  fetch('data.json')
+  .then(response => response.json())
+  .then(data => {
+    loanData = data.loans;
+    let storedLoanData = localStorage.getItem('loanData');
+    if (storedLoanData) {
+      loanData = JSON.parse(storedLoanData);
+    }
+  })
+  .catch(error => console.error('Error al cargar datos desde el archivo JSON:', error));
 });
 
 // Agregar evento de click al botón de préstamo

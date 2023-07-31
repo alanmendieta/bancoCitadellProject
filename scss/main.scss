@@ -1,4 +1,11 @@
 @import "./base/reset";
 
+@import "./utilities/variables";
+
 @import "./layout/header";
 @import "./layout/popup-verification";
+@import "./layout/forms-prestamos";
+@import "./layout/forms-inversiones";
+@import "./layout/footer";
+
+@import "./components/quienes-somos";

@@ -10,8 +10,42 @@ a {
   text-decoration: none;
 }
 
+h1 {
+  background-color: #04316c;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
+}
+
 .nav-logo {
   background-color: #04316c;
+  height: 96px;
+}
+.nav-logo a figure {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-logo a figure img {
+  width: 300px;
+}
+
+.nav-navigation {
+  display: flex;
+  justify-content: center;
+  background-color: #eeeeee;
+}
+.nav-navigation ul {
+  margin: 30px;
+  font-size: 18px;
+}
+.nav-navigation ul li {
+  list-style: none;
+  display: inline;
+  padding: 20px;
 }
 
 #verification-popup {
@@ -45,4 +79,186 @@ a {
 #verification-popup button {
   padding: 5px 10px;
 }
+
+.loan-section {
+  background-color: #f9f9f9;
+  padding: 23px;
+  margin-top: 50px;
+}
+
+.loan-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.loan-table {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+
+.loan-table-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 8px;
+  margin: 10px;
+}
+
+.loan-table-input label {
+  flex: 0 0 30px;
+  margin-right: 10px;
+}
+
+.loan-form-control {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 17px;
+}
+
+.investments-section {
+  background-color: #f9f9f9;
+  padding: 20px;
+}
+
+.investments-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.investments-table {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.investments-table-form {
+  flex: 1 1 100%;
+  max-width: 100%;
+  margin-bottom: 10px;
+}
+
+.investments-table-input {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 8px;
+}
+
+.investments-table-input label {
+  flex: 0 0 10px;
+  margin-right: 10px;
+}
+
+.investments-form-control {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
+.investments-table-mid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.investments-table-mid .investments-table-form {
+  flex-basis: calc(50% - 20px);
+  max-width: calc(50% - 20px);
+  margin-right: 20px;
+}
+
+.investments-table-mid .investments-table-form:nth-child(2) {
+  margin-bottom: 10px;
+}
+
+.investments-table-bottom {
+  margin-top: 0px;
+}
+
+.investments-table-buttom {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#investments-buttom:hover {
+  background-color: #0056b3;
+}
+
+.investments-table-result {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+footer {
+  background-color: #007bff;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-contact-user-info {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-contact-logo {
+  margin: 10px;
+}
+
+.footer-contact-logo img {
+  width: 25px;
+  height: 25px;
+}
+
+.footer-contact-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.footer-contact-copyright {
+  font-size: 12px;
+}
+
+.aboutUs-section {
+  background-color: #f9f9f9;
+  padding: 20px;
+}
+
+.aboutUs-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.aboutUs-questions {
+  max-width: 800px;
+  margin: 0 auto; /* Centrar el contenido horizontalmente */
+  padding: 20px;
+}
+
+.aboutUs-questions h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.aboutUs-questions p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
 /*# sourceMappingURL=styles.css.map */

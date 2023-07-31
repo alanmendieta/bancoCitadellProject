@@ -29,10 +29,10 @@
                 <div class="nav-navigation">
                     <ul>
                         <li class="nav-button" id="nav-button-inicio"><a href=#>Inicio</a></li>
-                        <li class="nav-button" id="nav-button-prestamos"><a href="#">Prestamos</a></li>
-                        <li class="nav-button" id="nav-button-inversiones"><a href="#">Inversiones</a></li>
-                        <li class="nav-button" id="nav-button-quienesSomos"><a href="#">Quienes somos</a></li>
-                        <li class="nav-button" id="nav-button-contacto"><a href="#">Contacto</a></li>
+                        <li class="nav-button" id="nav-button-prestamos"><a href="#loan-section">Prestamos</a></li>
+                        <li class="nav-button" id="nav-button-inversiones"><a href="#investments-section">Inversiones</a></li>
+                        <li class="nav-button" id="nav-button-quienesSomos"><a href="#aboutUs-section">Quienes somos</a></li>
+                        <li class="nav-button" id="nav-button-contacto"><a href="#contact-section">Contacto</a></li>
                     </ul>
                 </div>
             </nav>
@@ -63,7 +63,7 @@
           </div>
 
         <!-- LOAN -->
-        <div class="loan-section">
+        <div class="loan-section" id="loan-section">
             <section role="region" aria-label="Prestamos | Banco Citadell">
                 <div class="loan-title">
                     <h2>Préstamos Citadell | ¡Consulta el tuyo!</h2>
@@ -93,9 +93,6 @@
                             </div>
                         </div>
 
-                        <!-- DELETE AFTER APPLYING CSS -->
-                        <br>
-
                         <div class="loan-table-mid">
                             <div class="loan-table-form">
                                 <div class="loan-table-input">
@@ -111,9 +108,6 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- DELETE AFTER APPLYING CSS -->
-                        <br>
 
                         <div class="loan-table-bottom">
                             <div class="loan-table-form">
@@ -165,11 +159,8 @@
         </div>
         <!-- END LOAN -->
 
-        <!-- DELETE AFTER APPLYING CSS -->
-        <br>
-
         <!-- INVESTMENTS -->
-        <div class="investments-section">
+        <div class="investments-section" id="investments-section">
             <section role="region" aria-label="Inversiones | Banco Citadell">
                 <div class="investments-title">
                     <h2>Inversiones Citadell | Generando desde su casa</h2>
@@ -221,7 +212,7 @@
                         <div class="investments-table-form">
                             <div class="investments-table-input">
                                 <div class="investments-table-buttom">
-                                    <button id="investments-buttom">Consultar</button>
+                                    <button id="investments-button">Consultar</button>
                                 </div>
                             </div>
                         </div>
@@ -237,7 +228,7 @@
         <!-- END INVESTMENTS -->
 
         <!-- ABOUT US -->
-        <div class="aboutUs-section">
+        <div class="aboutUs-section" id="aboutUs-section">
             <section role="region" aria-label="Quienes Somos | Banco Citadell">
                 <div class="aboutUs-title">
                     <h2>¿Quiénes somos? | Banco Citadell</h2>
@@ -253,9 +244,6 @@
                             </section>
                         </div>
                     </div>
-
-                    <!-- DELETE AFTER APPLYING CSS -->
-                    <br>
 
                     <div class="aboutUs-questions-mid">
                         <div class="aboutUs-questions-mid-section">
@@ -275,9 +263,6 @@
                         </div>
                     </div>
 
-                    <!-- DELETE AFTER APPLYING CSS -->
-                    <br>
-
                     <div class="aboutUs-questions-bottom">
                         <div class="aboutUs-questions-bottom-section">
                             <section class="question-four">
@@ -294,7 +279,7 @@
     </main>
 
     <!-- FOOTER-->
-    <footer role="contentinfo">
+    <footer role="contentinfo" id="contact-section">
         <div class="footer-contact-user-info">
             <div class="footer-contact-networks-info">
                 <div class="footer-contact-primaryInfo">
@@ -333,6 +318,8 @@
         </div>
     </footer>
     <script src="./js/app.js"></script>
+    <script src="./json/data.json"></script>
+    <script src="./js/ajaxHandler.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();

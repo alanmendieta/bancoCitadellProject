@@ -1,3 +1,44 @@
+h1 {
+    background-color: $blue-color-banco-citadell;
+    color: $white-color-font-banco-citadell;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+}
+
 .nav-logo {
-    background-color: #04316c;
+    background-color: $blue-color-banco-citadell;
+    height: 96px;
+
+    a {
+
+        figure {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            img {
+                width: 300px;
+            }
+        }
+    }
+}
+
+.nav-navigation {
+    display: flex;
+    justify-content: center;
+    background-color: #eeeeee;
+
+    ul {
+        margin: 30px;
+        font-size: 18px;
+
+        li {
+            list-style: none;
+            display: inline;
+            padding: 20px;
+        }
+    }
 }
