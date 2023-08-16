@@ -1,59 +1,3 @@
-document.addEventListener('DOMContentLoaded', function() {
-  let verificationPopup = document.getElementById('verification-popup');
-  let verificationForm = document.getElementById('verification-form');
-  verificationForm.addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    let name = document.getElementById('name-input').value;
-    let surname = document.getElementById('surname-input').value;
-    let dni = parseInt(document.getElementById('dni-input').value);
-    let age = parseInt(document.getElementById('age-input').value);
-
-    let lettersRegex = /^[A-Za-z]+$/;
-
-    if (!name || !lettersRegex.test(name)) {
-      alert("Por favor, ingrese un nombre válido.");
-      return;
-    }
-
-    if (!surname || !lettersRegex.test(surname)) {
-      alert("Por favor, ingrese un apellido válido.");
-      return;
-    }
-
-    if (isNaN(dni) || dni.toString().length !== 8) {
-      alert("Por favor, ingrese un número de DNI válido (8 dígitos).");
-      return;
-    }
-
-    if (isNaN(age)) {
-      alert("Por favor, ingrese una edad válida.");
-      return;
-    }
-
-    if (age >= 18) {
-      alert("Bienvenido al sitio web oficial del Banco Citadell");
-      alert("Por favor, navegue con responsabilidad y nunca proporcione datos a ninguna persona.");
-      verificationPopup.classList.remove('show');
-
-      localStorage.setItem('name', name);
-      localStorage.setItem('surname', surname);
-      localStorage.setItem('dni', dni.toString());
-      localStorage.setItem('age', age.toString());
-
-      // Proporcionar modificacion del DOM para mostrar estos datos almacenados
-      document.getElementById('name-output').textContent = name;
-      document.getElementById('surname-output').textContent = surname;
-      document.getElementById('dni-output').textContent = dni.toString();
-      document.getElementById('age-output').textContent = age.toString();
-    } else {
-      alert("Siendo menor de edad no puedes acceder a esta sección, busca permiso de tu padre/madre o tutor legal y contáctanos.");
-      window.location.href = "https://www.google.com";
-    }
-  });
-  verificationPopup.classList.add('show');
-});
-
 // LOAN
 let loanData = [];
 
@@ -125,17 +69,45 @@ function addLoan() {
 }
 
 // Recuperar datos del Storage al cargar la página
-window.addEventListener('DOMContentLoaded', function() {
-  fetch('data.json')
-  .then(response => response.json())
-  .then(data => {
+window.addEventListener('DOMContentLoaded', async function() {
+  try {
+    const response = await fetch('data.json');
+    const data = await response.json();
     loanData = data.loans;
     let storedLoanData = localStorage.getItem('loanData');
     if (storedLoanData) {
       loanData = JSON.parse(storedLoanData);
     }
-  })
-  .catch(error => console.error('Error al cargar datos desde el archivo JSON:', error));
+  } catch (error) {
+    console.error('Error al cargar datos desde el archivo JSON:', error);
+  }
+
+  const consultationHistory = JSON.parse(localStorage.getItem('consultationHistory')) || [];
+
+  function updateConsultationHistory() {
+    const historyList = document.getElementById('consultation-history-list');
+    historyList.innerHTML = '';
+
+    consultationHistory.forEach((item, index) => {
+      const listItem = document.createElement('li');
+      listItem.textContent = `Consulta ${index + 1}: ${item}`;
+      historyList.appendChild(listItem);
+    });
+  }
+
+  updateConsultationHistory();
+
+  loanButton.addEventListener('click', async function () {
+    consultationHistory.push('Consulta de préstamo');
+    localStorage.setItem('consultationHistory', JSON.stringify(consultationHistory));
+    updateConsultationHistory();
+  });
+
+  investmentsButton.addEventListener('click', async function () {
+    consultationHistory.push('Consulta de inversiones');
+    localStorage.setItem('consultationHistory', JSON.stringify(consultationHistory));
+    updateConsultationHistory();
+  });
 });
 
 // Agregar evento de click al botón de préstamo
@@ -292,3 +264,38 @@ document.getElementById('investments-percentage').addEventListener('input', func
     input.value = inputValue.slice(0, -1);
   }
 });
+
+async function fetchConsultationHistory() {
+  try {
+    const data = await ajaxRequest('GET', 'data.json');
+    return data.consultationHistory;
+  } catch (error) {
+    throw new Error('Error en la solicitud de historial de consultas:', error);
+  }
+}
+
+function addToConsultationHistory(type, name, amount, result) {
+  const newEntry = {
+    type: type,
+    name: name,
+    amount: amount,
+    result: result
+  };
+
+  const consultationHistory = JSON.parse(localStorage.getItem('consultationHistory')) || [];
+  consultationHistory.push(newEntry);
+
+  localStorage.setItem('consultationHistory', JSON.stringify(consultationHistory));
+}
+
+const type = 'loan';
+const name = 'Juan Perez';
+const amount = '10000';
+const result = '12370';
+addToConsultationHistory(type, name, amount, result);
+
+function loadConsultationHistory() {
+  const consultationHistory = JSON.parse(localStorage.getItem('consultationHistory')) || [];
+}
+
+window.addEventListener('load', loadConsultationHistory);

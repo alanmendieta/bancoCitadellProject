@@ -1,4 +1,138 @@
 {
-    "loans": [],
-    "investments": []
-  }  
+  "loans": [
+    {
+      "name": "Juan",
+      "surname": "Perez",
+      "email": "juan@example.com",
+      "province": "Buenos Aires",
+      "city": "CABA",
+      "amount": "10000",
+      "term": "12",
+      "totalAmount": "12370"
+    },
+    {
+      "name": "Maria",
+      "surname": "Gomez",
+      "email": "maria@example.com",
+      "province": "Córdoba",
+      "city": "Córdoba",
+      "amount": "5000",
+      "term": "6",
+      "totalAmount": "5060"
+    },
+    {
+      "name": "Carlos",
+      "surname": "Martinez",
+      "email": "carlos@example.com",
+      "province": "Mendoza",
+      "city": "Mendoza",
+      "amount": "15000",
+      "term": "18",
+      "totalAmount": "17970"
+    },
+    {
+      "name": "Ana",
+      "surname": "Lopez",
+      "email": "ana@example.com",
+      "province": "Salta",
+      "city": "Salta",
+      "amount": "20000",
+      "term": "24",
+      "totalAmount": "25500"
+    },
+    {
+      "name": "Luis",
+      "surname": "Rodriguez",
+      "email": "luis@example.com",
+      "province": "Buenos Aires",
+      "city": "La Plata",
+      "amount": "8000",
+      "term": "12",
+      "totalAmount": "9980"
+    },
+    {
+      "name": "Laura",
+      "surname": "Fernandez",
+      "email": "laura@example.com",
+      "province": "Santa Fe",
+      "city": "Rosario",
+      "amount": "12000",
+      "term": "18",
+      "totalAmount": "14220"
+    },
+    {
+      "name": "Diego",
+      "surname": "Garcia",
+      "email": "diego@example.com",
+      "province": "Buenos Aires",
+      "city": "Quilmes",
+      "amount": "30000",
+      "term": "24",
+      "totalAmount": "40200"
+    }
+  ],
+  "investments": [
+    {
+      "amount": "5000",
+      "term": "6",
+      "percentage": "8.5",
+      "totalAmount": "5342.50"
+    },
+    {
+      "amount": "10000",
+      "term": "12",
+      "percentage": "10.0",
+      "totalAmount": "11000"
+    },
+    {
+      "amount": "20000",
+      "term": "9",
+      "percentage": "9.0",
+      "totalAmount": "21800"
+    },
+    {
+      "amount": "15000",
+      "term": "18",
+      "percentage": "12.5",
+      "totalAmount": "18150"
+    },
+    {
+      "amount": "8000",
+      "term": "6",
+      "percentage": "7.0",
+      "totalAmount": "8540"
+    },
+    {
+      "amount": "12000",
+      "term": "12",
+      "percentage": "9.5",
+      "totalAmount": "13140"
+    },
+    {
+      "amount": "30000",
+      "term": "24",
+      "percentage": "14.0",
+      "totalAmount": "41400"
+    }
+  ],
+  "consultationHistory": [
+    {
+      "type": "loan",
+      "name": "Juan Perez",
+      "amount": "10000",
+      "result": "12370"
+    },
+    {
+      "type": "investment",
+      "name": "Carlos Martinez",
+      "amount": "15000",
+      "result": "17970"
+    },
+    {
+      "type": "loan",
+      "name": "Maria Gomez",
+      "amount": "5000",
+      "result": "5060"
+    }
+  ]
+}

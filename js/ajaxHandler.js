@@ -1,28 +1,50 @@
-function ajaxRequest(method, url, data) {
-    return new Promise(function(resolve, reject) {
-      const xhr = new XMLHttpRequest();
-      xhr.open(method, url, true);
-      xhr.setRequestHeader('Content-Type', 'application/json');
-      xhr.onload = function() {
-        if (xhr.status >= 200 && xhr.status < 300) {
-          resolve(JSON.parse(xhr.responseText));
-        } else {
-          reject(new Error('Error en la solicitud AJAX'));
-        }
-      };
-      xhr.onerror = function() {
-        reject(new Error('Error de red'));
-      };
-      xhr.send(JSON.stringify(data));
+async function ajaxRequest(method, url, data) {
+  try {
+    const response = await fetch(url, {
+      method: method,
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
     });
+
+    if (!response.ok) {
+      throw new Error('Error en la solicitud AJAX');
+    }
+
+    const responseData = await response.json();
+    return responseData;
+  } catch (error) {
+    throw new Error(error.message);
   }
-  
-  // Ejemplo de cómo usar la función ajaxRequest:
-  ajaxRequest('GET', 'data.json')
-    .then(data => {
-      console.log(data);
-    })
-    .catch(error => {
-      console.error('Error en la solicitud AJAX:', error);
-    });
-  
+}
+
+// Consulta de datos de préstamos
+async function fetchLoansData() {
+  try {
+    const data = await ajaxRequest('GET', 'loans.json');
+    return data.loans;
+  } catch (error) {
+    throw new Error('Error en la solicitud de datos de préstamos:', error);
+  }
+}
+
+// Consulta de datos de inversiones
+async function fetchInvestmentsData() {
+  try {
+    const data = await ajaxRequest('GET', 'investments.json');
+    return data.investments;
+  } catch (error) {
+    throw new Error('Error en la solicitud de datos de inversiones:', error);
+  }
+}
+
+// Consulta de historial de consultas
+async function fetchConsultationHistory() {
+  try {
+    const data = await ajaxRequest('GET', 'history.json');
+    return data.consultationHistory;
+  } catch (error) {
+    throw new Error('Error en la solicitud de historial de consultas:', error);
+  }
+}
